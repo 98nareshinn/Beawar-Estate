@@ -11,5 +11,9 @@ export default defineConfig(({ mode }) => {
       allowedHosts: ["terminal.local"],
       proxy: { "/api": `http://127.0.0.1:${env.PORT || 4000}` },
     },
+    preview: {
+      host: "0.0.0.0",
+      allowedHosts: true,
+    },
   };
 });
