@@ -18,7 +18,7 @@ export const uploadDir = resolve(
 mkdirSync(dataDir, { recursive: true });
 mkdirSync(uploadDir, { recursive: true });
 export const db = new DatabaseSync(resolve(dataDir, "estate.sqlite"));
-db.exec(readFileSync(resolve(root, "backend/sql/schema.sql"), "utf8"));
+db.exec(readFileSync(resolve(dirname(fileURLToPath(import.meta.url)), "../sql/schema.sql"), "utf8"));
 // Additive migration preserves existing installations and their requests.
 const ticketColumns = db.prepare("PRAGMA table_info(tickets)").all();
 if (!ticketColumns.some(column => column.name === "agent_id")) db.exec("ALTER TABLE tickets ADD COLUMN agent_id TEXT REFERENCES agents(id)");
