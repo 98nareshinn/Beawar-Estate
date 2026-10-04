@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node --env-file=../.env --watch src/server.ts",
-    "dev:all": "node --env-file=../.env src/dev.ts",
-    "start": "node --env-file=../.env src/server.ts",
+    "dev": "node --env-file=.env --watch src/server.ts",
+    "dev:all": "node --env-file=.env src/dev.ts",
+    "start": "node --env-file=.env src/server.ts",
     "typecheck": "tsc --noEmit",
-    "test": "node --env-file=../.env --test tests/workflows.test.ts"
+    "test": "node --env-file=.env --test tests/workflows.test.ts"
   },
   "dependencies": {
     "fast-xml-parser": "^5.11.2",
@@ -23,3 +23,4 @@
     "node": ">=24.0.0 <25"
   }
 }
+
